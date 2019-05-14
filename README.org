@@ -1,0 +1,39 @@
+* bazel-workspace
+
+An Emacs extension/mode for interacting with Bazel workspaces.
+
+** Usage
+
+With a Bazel managed file open, ~bazel-workspace~ gives you:
+
+#+begin_html
+<kbd>C-c C-c b</kbd> run bazel build
+<br />
+<kbd>C-c C-c t</kbd> run bazel test
+<br />
+#+end_html
+
+~bazel-workspace~ attempts to find an appropriate target to run for the
+open buffer.
+
+** Install
+
+This extension lives in a git repo. Download it first with
+
+#+BEGIN_SRC bash
+git clone https://github.com/andyscott/emacs-bazel-workspace ~/.emacs.d/bazel-workspace
+#+END_SRC
+
+then do this if you use ~use-package~
+
+#+BEGIN_SRC elisp
+(use-package bazel-workspace
+  :load-path "~/.emacs.d/bazel-workspace")
+#+END_SRC
+
+or this if you don't.
+
+#+BEGIN_SRC elisp
+(add-to-list 'load-path "~/.emacs.d/bazel-workspace")
+(require 'bazel-workspace)
+#+END_SRC
