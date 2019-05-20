@@ -43,6 +43,30 @@
 	    map)
   :group 'bazel)
 
+(when (package-installed-p 'hydra)
+  (progn
+    (defhydra bazel-workspace/menu-command (:color pink :hint nil)
+      "bazel"
+      ("q" bazel-workspace/command-query "query" :exit t)
+      ("b" bazel-workspace/command-build "build" :exit t)
+      ("t" bazel-workspace/command-test "test" :exit t))))
+
+
+(defun bazel-workspace/command-query ()
+  "Run a bazel query."
+  (interactive)
+  (message "run a query"))
+
+(defun bazel-workspace/command-build ()
+  "Run a bazel query."
+  (interactive)
+  (message "run a query"))
+
+(defun bazel-workspace/command-test ()
+  "Run a bazel query."
+  (interactive)
+  (message "run a query"))
+
 (defun bazel-workspace/find-root (pathname)
   "Find the workspace root above PATHNAME."
   (let ((file (locate-dominating-file pathname "WORKSPACE")))
